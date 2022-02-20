@@ -95,36 +95,36 @@ public class GildedRoseTest {
         assertEquals(50, app.items[0].quality);
     }
 
-    // @Test
-    // public void ConjuredQualityShoudDecreaseBy2() {
-    // Item[] items = new Item[] { new Item("Conjured", 10, 10) };
-    // GildedRose app = new GildedRose(items);
-    // app.updateQuality();
-    // assertEquals(8, app.items[0].quality);
-    // }
+    @Test
+    public void ConjuredQualityShoudDecreaseBy2() {
+        Item[] items = new Item[] { new Item("Conjured", 10, 10) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertEquals(8, app.items[0].quality);
+    }
 
-    // @Test
-    // public void ConjuredQualityShoudDecreaseTwiceIfSellByDateHasPassed() {
-    // Item[] items = new Item[] { new Item("Conjured", 0, 10) };
-    // GildedRose app = new GildedRose(items);
-    // app.updateQuality();
-    // assertEquals(0, app.items[0].quality);
-    // }
+    @Test
+    public void ConjuredQualityShoudDecreaseTwiceIfSellByDateHasPassed() {
+        Item[] items = new Item[] { new Item("Conjured", 0, 10) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertEquals(6, app.items[0].quality);
+    }
 
-    // @Test
-    // public void ConjuredMinQualityShouldBe0() {
-    // Item[] items = new Item[] { new Item("Conjured", 1, 0) };
-    // GildedRose app = new GildedRose(items);
-    // app.updateQuality();
-    // assertEquals(0, app.items[0].quality);
-    // }
+    @Test
+    public void ConjuredMinQualityShouldBe0() {
+        Item[] items = new Item[] { new Item("Conjured", 1, 0) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertEquals(0, app.items[0].quality);
+    }
 
-    // @Test
-    // public void ConjuredMinQualityShouldBe0AlsoIfSellByDateHasPassed() {
-    // Item[] items = new Item[] { new Item("Conjured", 0, 0) };
-    // GildedRose app = new GildedRose(items);
-    // app.updateQuality();
-    // assertEquals(0, app.items[0].quality);
-    // }
+    @Test
+    public void ConjuredMinQualityShouldBe0AlsoIfSellByDateHasPassed() {
+        Item[] items = new Item[] { new Item("Conjured", 0, 0) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertEquals(0, app.items[0].quality);
+    }
 
 }
