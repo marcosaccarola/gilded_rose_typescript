@@ -15,7 +15,6 @@ class Shop {
       if (this.items[i].name == 'Sulfuras, Hand of Ragnaros') {
         continue;
       }
-
       if (this.items[i].name == 'Aged Brie') {
         if (this.items[i].quality < 50) {
           this.items[i].quality += 1;
@@ -28,12 +27,10 @@ class Shop {
           this.items[i].quality += 1;
         }
         if (this.items[i].sellIn < 11 && this.items[i].quality < 50) {
-          if (this.items[i].quality < 50) {
-            this.items[i].quality += 1;
-          }
+          this.items[i].quality += 1;
         }
         if (this.items[i].sellIn < 6 && this.items[i].quality < 50) {
-            this.items[i].quality += 1;
+          this.items[i].quality += 1;
         }
         if (this.items[i].sellIn < 1) {
           this.items[i].quality = 0;
@@ -46,7 +43,6 @@ class Shop {
           this.items[i].quality -= 1;
         }
       }
-
       if (this.items[i].name == 'Conjured') {
         if (this.items[i].quality > 0) {
           this.items[i].quality -= 1;
@@ -55,10 +51,8 @@ class Shop {
           this.items[i].quality -= 1;
         }
       }
-
       this.items[i].sellIn -= 1;
     }
-
     return this.items;
   }
 }
