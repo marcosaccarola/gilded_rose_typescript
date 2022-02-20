@@ -1,1 +1,1 @@
-# gilded_rose not only typescript
+# gilded_rose not only typescript (java, javascript)
