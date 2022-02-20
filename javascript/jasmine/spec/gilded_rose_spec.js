@@ -57,26 +57,26 @@ describe("Gilded Rose", function() {
       const items = gildedRose.updateQuality();
       expect(items[0].quality).toBeLessThan(51);
   });
-  // it('Conjured quality should decrease by 2', function() {
-  //     const gildedRose = new Shop([ new Item('Conjured', 10, 10) ]);
-  //     const items = gildedRose.updateQuality();
-  //     expect(items[0].quality).toEqual(8);
-  // });
-  // it('Conjured quality should decrease twice if the sell by date has passed', function() {
-  //     const gildedRose = new Shop([ new Item('Conjured', 0, 10) ]);
-  //     const items = gildedRose.updateQuality();
-  //     expect(items[0].quality).toEqual(6);
-  // });
-  // it('Conjured minimum quality should be 0', function() {
-  //     const gildedRose = new Shop([ new Item('Conjured', 1, 1) ]);
-  //     const items = gildedRose.updateQuality();
-  //     expect(items[0].quality).toBeLessThan(-1);
-  // });
-  // it('Conjured minimum quality should be 0 also if the sell by date has passed', function() {
-  //     const gildedRose = new Shop([ new Item('Conjured', 0, 1) ]);
-  //     const items = gildedRose.updateQuality();
-  //     expect(items[0].quality).toEqual(0);
-  // });
+  it('Conjured quality should decrease by 2', function() {
+      const gildedRose = new Shop([ new Item('Conjured', 10, 10) ]);
+      const items = gildedRose.updateQuality();
+      expect(items[0].quality).toEqual(8);
+  });
+  it('Conjured quality should decrease twice if the sell by date has passed', function() {
+      const gildedRose = new Shop([ new Item('Conjured', 0, 10) ]);
+      const items = gildedRose.updateQuality();
+      expect(items[0].quality).toEqual(6);
+  });
+  it('Conjured minimum quality should be 0', function() {
+      const gildedRose = new Shop([ new Item('Conjured', 1, 1) ]);
+      const items = gildedRose.updateQuality();
+      expect(items[0].quality).toBeGreaterThan(-1);
+  });
+  it('Conjured minimum quality should be 0 also if the sell by date has passed', function() {
+      const gildedRose = new Shop([ new Item('Conjured', 0, 1) ]);
+      const items = gildedRose.updateQuality();
+      expect(items[0].quality).toEqual(0);
+  });
   
 
 });
