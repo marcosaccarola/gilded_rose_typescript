@@ -1,1 +1,1 @@
-# gilded_rose: ts, js (mocha, jasmine)
+# gilded_rose not only typescript
