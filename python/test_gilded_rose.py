@@ -72,29 +72,29 @@ class GildedRoseTest(unittest.TestCase):
         gilded_rose.update_quality()
         self.assertEquals(50, items[0].quality)
 
-    # def test_Conjured_quality_decrease_by_2(self):
-    #     items = [Item("Conjured", 10, 10)]
-    #     gilded_rose = GildedRose(items)
-    #     gilded_rose.update_quality()
-    #     self.assertEquals(8, items[0].quality)
+    def test_Conjured_quality_decrease_by_2(self):
+        items = [Item("Conjured", 10, 10)]
+        gilded_rose = GildedRose(items)
+        gilded_rose.update_quality()
+        self.assertEquals(8, items[0].quality)
 
-    # def test_Conjured_quality_decrease_by_4_if_sell_by_date_has_passed(self):
-    #     items = [Item("Conjured", 0, 10)]
-    #     gilded_rose = GildedRose(items)
-    #     gilded_rose.update_quality()
-    #     self.assertEquals(6, items[0].quality)
+    def test_Conjured_quality_decrease_by_4_if_sell_by_date_has_passed(self):
+        items = [Item("Conjured", 0, 10)]
+        gilded_rose = GildedRose(items)
+        gilded_rose.update_quality()
+        self.assertEquals(6, items[0].quality)
 
-    # def test_Conjured_min_quality_is_0(self):
-    #     items = [Item("Conjured", 5, 1)]
-    #     gilded_rose = GildedRose(items)
-    #     gilded_rose.update_quality()
-    #     self.assertEquals(0, items[0].quality)
+    def test_Conjured_min_quality_is_0(self):
+        items = [Item("Conjured", 5, 1)]
+        gilded_rose = GildedRose(items)
+        gilded_rose.update_quality()
+        self.assertEquals(0, items[0].quality)
 
-    # def test_Conjured_min_quality_is_0_also_if_sell_by_date_has_passed(self):
-    #     items = [Item("Conjured", 0, 1)]
-    #     gilded_rose = GildedRose(items)
-    #     gilded_rose.update_quality()
-    #     self.assertEquals(0, items[0].quality)
+    def test_Conjured_min_quality_is_0_also_if_sell_by_date_has_passed(self):
+        items = [Item("Conjured", 0, 1)]
+        gilded_rose = GildedRose(items)
+        gilded_rose.update_quality()
+        self.assertEquals(0, items[0].quality)
 
 
 if __name__ == '__main__':
