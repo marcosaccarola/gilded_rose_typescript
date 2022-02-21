@@ -10,6 +10,10 @@ export class Item {
     }
 }
 
+const MAX_QUALITY=50
+const MIN_QUALITY=0
+const MIN_SELL_IN=0
+
 export class GildedRose {
     items: Array<Item>;
 
@@ -23,44 +27,44 @@ export class GildedRose {
                     continue
                 }
             if (this.items[i].name == 'Aged Brie' ) {
-                if (this.items[i].quality < 50) {
-                        this.items[i].quality +=  1
+                if (this.items[i].quality < MAX_QUALITY) {
+                        this.items[i].quality ++
                     }
-                if(this.items[i].quality < 50 && this.items[i].sellIn < 1){
-                        this.items[i].quality += 1
+                if (this.items[i].quality < MAX_QUALITY && this.items[i].sellIn == MIN_SELL_IN){
+                        this.items[i].quality ++
                     }
                 
             }else if(this.items[i].name == 'Backstage passes to a TAFKAL80ETC concert') {
-                if (this.items[i].quality < 50) {
-                        this.items[i].quality += 1
+                if (this.items[i].quality < MAX_QUALITY) {
+                        this.items[i].quality ++
                     }
-                if (this.items[i].quality < 50 && this.items[i].sellIn < 11) {
-                        this.items[i].quality  += 1
+                if (this.items[i].quality < MAX_QUALITY && this.items[i].sellIn < 11) {
+                        this.items[i].quality  ++
                     }
-                if (this.items[i].quality < 50 && this.items[i].sellIn < 6) {
-                        this.items[i].quality += 1
+                if (this.items[i].quality < MAX_QUALITY && this.items[i].sellIn < 6) {
+                        this.items[i].quality ++
                     }
-                if(this.items[i].sellIn < 1){
-                        this.items[i].quality = 0
+                if(this.items[i].sellIn == MIN_SELL_IN){
+                        this.items[i].quality = MIN_QUALITY
                     }
             }else{
-                if (this.items[i].quality > 0) {
-                    this.items[i].quality -= 1
+                if (this.items[i].quality > MIN_QUALITY) {
+                    this.items[i].quality --
                 }
-                if(this.items[i].quality > 0 && this.items[i].sellIn < 1){
-                    this.items[i].quality -= 1
+                if(this.items[i].quality > MIN_QUALITY && this.items[i].sellIn == MIN_SELL_IN){
+                    this.items[i].quality --
                 }
             }
             if(this.items[i].name == 'Conjured'){
-                if(this.items[i].quality > 0 ){
-                        this.items[i].quality -= 1
+                if(this.items[i].quality > MIN_QUALITY ){
+                        this.items[i].quality --
                     }
-                if(this.items[i].sellIn < 1 && this.items[i].quality > 0){ 
-                        this.items[i].quality -= 1
+                if(this.items[i].quality > MIN_QUALITY && this.items[i].sellIn == MIN_SELL_IN){ 
+                        this.items[i].quality --
                     }  
             } 
                 
-                this.items[i].sellIn -= 1;
+                this.items[i].sellIn --;
             }
         return this.items;
     }
