@@ -8,15 +8,20 @@ describe('Gilded Rose', function () {
         const items = gildedRose.updateQuality();
         expect(items[0].name).to.equal('foo');
     });
-    it('Quality should decrease by 1', function() {
+    it('Standard item quality should decrease by 1', function() {
         const gildedRose = new GildedRose([ new Item('Some item', 10, 10) ]);
         const items = gildedRose.updateQuality();
         expect(items[0].quality).to.equal(9);
     });
-    it('Quality should decrease by 2 if the sell by date has passed', function() {
+    it('Standard item quality should decrease by 2 if the sell by date has passed', function() {
         const gildedRose = new GildedRose([ new Item('Some item', 0, 10) ]);
         const items = gildedRose.updateQuality();
         expect(items[0].quality).to.equal(8);
+    });
+    it('Standard item quality should not be negative', function() {
+        const gildedRose = new GildedRose([ new Item('Some item', 0, 0) ]);
+        const items = gildedRose.updateQuality();
+        expect(items[0].quality).to.equal(0);
     });
     it('Sulfuras quality should be 80 and SellIn 0', function() {
         const gildedRose = new GildedRose([ new Item('Sulfuras, Hand of Ragnaros', 0, 80) ]);

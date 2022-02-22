@@ -12,7 +12,7 @@ export class Item {
 
 const MAX_QUALITY=50
 const MIN_QUALITY=0
-const SELL_IN=1
+const SELL_BY_DATE=1
 
 function handleSulfuras(i: Item){
     if (i.name == 'Sulfuras, Hand of Ragnaros'){
@@ -24,7 +24,7 @@ function handleAgedBrie(i: Item){
         if (i.quality < MAX_QUALITY) {
                 i.quality ++
                 }
-        if (i.quality < MAX_QUALITY && i.sellIn < SELL_IN){
+        if (i.quality < MAX_QUALITY && i.sellIn < SELL_BY_DATE){
                 i.quality ++
             }
             i.sellIn --
@@ -41,7 +41,7 @@ function handleBackstage(i: Item){
         if (i.quality < MAX_QUALITY && i.sellIn < 6) {
                 i.quality ++
             }
-        if(i.sellIn < SELL_IN){
+        if(i.sellIn < SELL_BY_DATE){
                 i.quality = MIN_QUALITY
             }
             i.sellIn --
@@ -57,7 +57,7 @@ function handleStandardItem(i: Item){
         if (i.quality > MIN_QUALITY) {
                 i.quality --
             }
-        if(i.quality > MIN_QUALITY && i.sellIn < SELL_IN){
+        if(i.quality > MIN_QUALITY && i.sellIn < SELL_BY_DATE){
                 i.quality --
             }
             i.sellIn --
@@ -68,13 +68,13 @@ function handleConjured(i: Item){
         if(i.quality > MIN_QUALITY ){
                 i.quality --
             }
-        if(i.quality > MIN_QUALITY && i.sellIn < SELL_IN){ 
+        if(i.quality > MIN_QUALITY && i.sellIn < SELL_BY_DATE){ 
                 i.quality --
             }
         if(i.quality > MIN_QUALITY ){
                 i.quality --
             }
-        if(i.quality > MIN_QUALITY && i.sellIn < SELL_IN){ 
+        if(i.quality > MIN_QUALITY && i.sellIn < SELL_BY_DATE){ 
                 i.quality --
             }
             i.sellIn --
