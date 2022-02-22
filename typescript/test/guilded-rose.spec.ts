@@ -85,7 +85,7 @@ describe('Gilded Rose', function () {
         expect(items[0].quality).to.be.above(-1);
     });
     it('Conjured minimum quality should be 0 also if the sell by date has passed', function() {
-        const gildedRose = new GildedRose([ new Item('Conjured', 0, 1) ]);
+        const gildedRose = new GildedRose([ new Item('Conjured', 0, 0) ]);
         const items = gildedRose.updateQuality();
         expect(items[0].quality).to.equal(0);
     });
