@@ -20,13 +20,21 @@ export class GildedRose {
     }
 
     updateQuality() {
+
+
         for (let i = 0; i < this.items.length; i++) {
-            handleSulfuras(this.items[i])
-            handleAgedBrie(this.items[i])
-            handleBackstage(this.items[i])
-            handleStandardItem(this.items[i])
-            handleConjured(this.items[i])
+            if (handleSulfuras(this.items[i])){
+                continue
+            } else if (handleAgedBrie(this.items[i])){
+                continue
+            } else if (handleBackstage(this.items[i])){
+                continue
+            } else if (handleConjured(this.items[i])){
+                continue
+            } else {
+                handleStandardItem(this.items[i])
             }
+        }
         return this.items;
     }
 }
