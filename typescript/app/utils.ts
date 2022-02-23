@@ -17,6 +17,17 @@ function expirationDateDecreasesQuality(i: Item){
         i.quality --
     }
 }
+function backstageSpecialBehavior(i: Item){
+    if (i.sellIn < 11) {
+        i.quality  ++
+        }
+    if (i.sellIn < 6) {
+        i.quality ++
+        }
+    if(i.sellIn < SELL_BY_DATE){
+        i.quality = MIN_QUALITY
+        }
+}
 
 export const handleSulfuras=(i: Item)=>{
     if (i.name == 'Sulfuras, Hand of Ragnaros'){
@@ -36,15 +47,7 @@ export const handleBackstage=(i: Item)=>{
     if (i.name == 'Backstage passes to a TAFKAL80ETC concert') {
         i.sellIn --
         i.quality ++
-        if (i.sellIn < 11) {
-            i.quality  ++
-            }
-        if (i.sellIn < 6) {
-            i.quality ++
-            }
-        if(i.sellIn < SELL_BY_DATE){
-            i.quality = MIN_QUALITY
-            }
+        backstageSpecialBehavior(i)
         qualityLimiter(i)
         return true
         }
