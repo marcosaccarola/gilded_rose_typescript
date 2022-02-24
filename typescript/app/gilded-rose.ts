@@ -10,7 +10,7 @@ export class Item {
     }
 }
 
-import { handleSulfuras, handleAgedBrie, handleBackstage, handleStandardItem, handleConjured } from "./utils";
+import { handleSulfuras, handleAgedBrie, handleBackstage, handleStandardItem, handleConjured } from "./handlers";
 
 export class GildedRose {
     items: Array<Item>;
